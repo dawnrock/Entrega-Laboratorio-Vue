@@ -23,12 +23,8 @@ export default defineComponent({
   components: {},
   data: () => ({
     users: [] as UserEntity[],
-    members: 'members',
   }),
   computed: {
-    // id(): string {
-    //   return String((this.$route as RouteLocation).params.id);
-    // },
     userInCompany(): string {
       return this.$store.getters['CompaniesModule/textFilter'];
     },

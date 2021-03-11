@@ -14,12 +14,4 @@ export const userService = {
     ).then(response => response.json());
     return companiesBooks;
   },
-
-  // async getUserInCompany(login: CompaniesEntity['login']): Promise<CompaniesEntity | undefined> {
-  //   if(!login) throw new Error('login is required');
-
-  //   return this.getCompanies(login).then(list => {
-  //     return list.find((item: CompaniesEntity) => String(item.id) === String(login));
-  //   });
-  // }
 };

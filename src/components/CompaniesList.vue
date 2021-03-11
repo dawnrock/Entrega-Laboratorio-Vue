@@ -48,9 +48,6 @@ import { userService } from '@/services/users';
 import { CompaniesEntity } from '@/types';
 import { defineComponent } from 'vue';
 
-const matchStrings = (strA: string, strB: string) =>
-  strA.toLocaleLowerCase().match(strB.toLocaleLowerCase());
-
 export default defineComponent({
   data() {
     return {
@@ -71,14 +68,6 @@ export default defineComponent({
         }, 300);
       },
     },
-    // totalCompanies(): number {
-    //   return this.filteredCompaniesList.length;
-    // },
-    // filteredCompaniesList(): CompaniesEntity[] {
-    //   return this.companiesList.filter((item: CompaniesEntity) =>
-    //     matchStrings(item.id, this.textFilter)
-    //   );
-    // },
   },
   async created() {
     this.getOrganizations();
@@ -86,7 +75,9 @@ export default defineComponent({
 
   methods: {
     async getOrganizations() {
-      this.companiesList = await userService.getCompanies(this.textFilter);
+      if (this.textFilter) {
+        this.companiesList = await userService.getCompanies(this.textFilter);
+      }
     },
 
     simpleDebounce(fn: any, delay = 300) {
