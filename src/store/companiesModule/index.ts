@@ -4,7 +4,7 @@ export interface CompaniesListState {
   textFilter: string;
 }
 const state: () => CompaniesListState = () => ({
-  textFilter: '',
+  textFilter: 'lemoncode',
 });
 
 const mutationTypes = {
