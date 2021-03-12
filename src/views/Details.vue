@@ -9,7 +9,7 @@
           </div>
           <div>
             <p>
-              <span class="grey-text">Name:</span>
+              <span class="grey-text">Login:</span>
               <strong>{{ user.login }}</strong>
             </p>
           </div>

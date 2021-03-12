@@ -7,10 +7,6 @@
         <img :src="`${user.avatar_url}`" alt="" width="300" />
       </div>
       <p>
-        <span class="grey-text">Login:</span>
-        <strong>{{ user.login }}</strong>
-      </p>
-      <p>
         <span class="grey-text">Name:</span>
         <strong>{{ user.name }}</strong>
       </p>
