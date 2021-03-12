@@ -9,7 +9,7 @@
 
     <suspense>
       <ul class="company-list">
-        <router-link :to="`/detail/${companiesList.id}`">
+        <router-link :to="`/usersList/${companiesList.id}`">
           <article id="companiesList" class="grid product-container card">
             <div class="image">
               <img :src="`${companiesList.avatar_url}`" alt="" />

@@ -1,15 +1,21 @@
 <template>
   <div class="grid">
-    <h1>Details</h1>
-
-    <div v-for="user in users" :key="user.id">
-      <div>
-        <img :src="`${user.avatar_url}`" width="150" alt="" />
+    <h2>Lista de usuarios</h2>
+    <suspense>
+      <div v-for="user in users" :key="user.id">
+        <router-link :to="`/detailUser/${user.login}`">
+          <div>
+            <img :src="`${user.avatar_url}`" width="150" alt="" />
+          </div>
+          <div>
+            <p>
+              <span class="grey-text">Name:</span>
+              <strong>{{ user.login }}</strong>
+            </p>
+          </div>
+        </router-link>
       </div>
-      <h1>Name: {{ user.login }}</h1>
-
-      <p><span class="grey-text">URL: </span>{{ user.url }}</p>
-    </div>
+    </suspense>
   </div>
 </template>
 
@@ -31,7 +37,7 @@ export default defineComponent({
   },
   created() {
     userService
-      .getUser(this.userInCompany)
+      .getUsers(this.userInCompany)
       .then((users: UserEntity[] | undefined) => {
         if (users) {
           this.users = users;
