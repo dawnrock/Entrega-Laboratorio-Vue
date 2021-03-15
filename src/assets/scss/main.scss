@@ -18,6 +18,7 @@ ul {
 }
 
 #app {
+  background-color: lightgray;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,9 +67,14 @@ ul {
 
 // custom
 .card {
+  justify-content:right;
   border-radius: 5px;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.1);
   padding: 1em;
+}
+
+.header {
+  background-color: gray;
 }
 
 .button {
